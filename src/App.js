@@ -26,11 +26,26 @@ function App() {
  }, []);
 
  return (
-   <div className='app'>
-     <h1>To-Do App</h1>
-     <TodoForm onTodoAdded={fetchTodos} />
-     <TodoList todos={todos} onDelete={deleteTodo} onToggle={toggleCompleted} />
-   </div>
+   <ul>
+      {todos.map((todo) => (
+        <li key={todo._id}>
+          <div className="todo-item">
+            <span
+              style={{
+                textDecoration: todo.completed ? 'line-through' : 'none',
+                cursor: 'pointer'
+              }}
+              onClick={() => onToggle(todo._id, !todo.completed)}
+            >
+              {todo.title}
+            </span>
+            <button className="delete-btn" onClick={() => onDelete(todo._id)}>
+              Delete
+            </button>
+          </div>
+            </li>
+      ))}
+    </ul>
  );
 }
 

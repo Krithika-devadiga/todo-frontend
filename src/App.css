@@ -96,3 +96,22 @@ input{
   margin-right: 10px;
 }
 
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  margin: 10px auto;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  background-color: #1f1f1f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
